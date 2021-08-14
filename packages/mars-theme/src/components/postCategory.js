@@ -23,12 +23,13 @@ import FeaturedMedia from "./featured-media";
  *
  * @returns The {@link Post} element rendered.
  */
-const Post = ({ state, actions, libraries }) => {
+const PostCategory = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // console.log('-----------', data);
   // Get the data of the post.
   const post = state.source[data.type][data.id];
+  console.log('categories-------', state.source.post[data.id].categories);
   // Get the data of the author.
   const author = state.source.author[post.author];
   // Get a human readable date.
@@ -92,7 +93,7 @@ const Post = ({ state, actions, libraries }) => {
   ) : null;
 };
 
-export default connect(Post);
+export default connect(PostCategory);
 
 const Container = styled.div`
   width: 800px;

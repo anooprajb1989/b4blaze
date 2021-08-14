@@ -3,6 +3,7 @@ import { Head, connect, decode } from "frontity";
 const Title = ({ state }) => {
   // Get data about the current URL.
   const data = state.source.get(state.router.link);
+  // console.log('data---------', data);
   // Set the default title.
   let title = state.frontity.title;
 

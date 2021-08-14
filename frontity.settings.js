@@ -1,10 +1,10 @@
 const settings = {
-  "name": "hello-frontity",
+  "name": "tv-zero-news",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://tv0.in",
+      "title": "Home - TV Zero News",
+      "description": "Home - TV Zero News"
     }
   },
   "packages": [
@@ -13,45 +13,49 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
+            ["About Us", "/about-us/"]
           ],
           "featured": {
-            "showOnList": false,
-            "showOnPost": false
-          }
+            "showOnList": true,
+            "showOnPost": true
+          },
+          autoPrefetch: "hover"
         }
       }
     },
+    // {
+    //   name: "b4blaze-theme",
+    //   state: {
+    //     theme: {
+    //       featured: {
+    //         showOnList: false,
+    //         showOnPost: false,
+    //       }
+    //     },
+    //   },
+    // },
     {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "api": "https://parabrahmaindia.com/wp-json",
+          "homepage": "/home",
+          "postsPage":"/blog"
         }
       }
     },
+    {
+      name: "@frontity/google-tag-manager-analytics",
+      state: {
+        googleTagManagerAnalytics: {
+          containerId: "UA-77751865-2",
+        },
+      },
+    },
     "@frontity/tiny-router",
-    "@frontity/html2react"
-  ]
+    "@frontity/html2react",
+    "@frontity/head-tags"
+  ] 
 };
 
 export default settings;
